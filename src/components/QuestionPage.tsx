@@ -9,6 +9,7 @@ const answerOptions: { key: AnswerKey; label: string }[] = [
 ];
 
 type Props = {
+  roleLabel: string;
   questions: Question[];
   answers: Record<number, AnswerKey>;
   onAnswer: (questionId: number, answer: AnswerKey) => void;
@@ -17,6 +18,7 @@ type Props = {
 };
 
 export function QuestionPage({
+  roleLabel,
   questions,
   answers,
   onAnswer,
@@ -30,8 +32,8 @@ export function QuestionPage({
     <>
       <div style={styles.headerRow}>
         <div>
-          <p style={styles.badge}>Tank Diagnosis</p>
-          <h1 style={styles.title}>タンク適性診断</h1>
+          <p style={styles.badge}>{roleLabel}</p>
+          <h1 style={styles.title}>適性診断</h1>
         </div>
         <button style={styles.secondaryButton} onClick={onBackToTop}>
           トップへ

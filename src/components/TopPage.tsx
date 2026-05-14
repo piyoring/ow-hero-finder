@@ -17,7 +17,7 @@ export function TopPage({ onStart }: Props) {
       <div style={styles.roleGrid}>
         <button style={styles.primaryCard} onClick={() => onStart("tank")}>
           <span style={styles.roleTitle}>タンク</span>
-          <span style={styles.roleText}>25問で診断する</span>
+          <span style={styles.roleText}>20問で診断する</span>
         </button>
 
         <button style={styles.disabledCard} disabled>
@@ -25,9 +25,9 @@ export function TopPage({ onStart }: Props) {
           <span style={styles.roleText}>準備中</span>
         </button>
 
-        <button style={styles.disabledCard} disabled>
+        <button style={styles.primaryCard} onClick={() => onStart("support")}>
           <span style={styles.roleTitle}>サポート</span>
-          <span style={styles.roleText}>準備中</span>
+          <span style={styles.roleText}>20問で診断する</span>
         </button>
       </div>
     </>

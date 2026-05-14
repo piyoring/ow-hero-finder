@@ -1,5 +1,7 @@
 import { useMemo, useState } from "react";
 import type { AnswerKey, Page, Role } from "./types";
+import { supportQuestions } from "./data/supportQuestions";
+import { supportDescriptions } from "./data/supportDescriptions";
 import { tankQuestions } from "./data/tankQuestions";
 import { tankDescriptions } from "./data/tankDescriptions";
 import { calculateScores } from "./utils/calculateScores";
@@ -13,9 +15,28 @@ export default function App() {
   const [selectedRole, setSelectedRole] = useState<Role | null>(null);
   const [answers, setAnswers] = useState<Record<number, AnswerKey>>({});
 
-  const questions = selectedRole === "tank" ? tankQuestions : [];
-  const heroDescriptions =
-    selectedRole === "tank" ? tankDescriptions : {};
+const questions =
+  selectedRole === "tank"
+    ? tankQuestions
+    : selectedRole === "support"
+    ? supportQuestions
+    : [];
+
+const roleLabel =
+  selectedRole === "tank"
+    ? "タンク"
+    : selectedRole === "support"
+    ? "サポート"
+    : selectedRole === "damage"
+    ? "ダメージ"
+    : "";
+
+const heroDescriptions =
+  selectedRole === "tank"
+    ? tankDescriptions
+    : selectedRole === "support"
+    ? supportDescriptions
+    : {};
 
   const results = useMemo(() => {
     return calculateScores(questions, answers);
@@ -53,6 +74,7 @@ export default function App() {
 
         {page === "questions" && (
           <QuestionPage
+            roleLabel={roleLabel}
             questions={questions}
             answers={answers}
             onAnswer={answerQuestion}

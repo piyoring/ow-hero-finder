@@ -4,9 +4,9 @@ export const styles: Record<string, React.CSSProperties> = {
   page: {
     minHeight: "100vh",
     background:
-      "radial-gradient(circle at 18% 0%, rgba(245,158,11,0.18), transparent 30%), linear-gradient(135deg, #171717 0%, #222222 52%, #0f1720 100%)",
+      "radial-gradient(circle at 16% 0%, var(--role-accent-glow, rgba(245,158,11,0.18)), transparent 34%), radial-gradient(circle at 82% 8%, rgba(56,189,248,0.14), transparent 28%), linear-gradient(135deg, #242424 0%, #171717 48%, #0d1720 100%)",
     color: "#f8fafc",
-    padding: "40px 16px",
+    padding: "46px 16px",
     boxSizing: "border-box",
     fontFamily:
       "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
@@ -18,7 +18,7 @@ export const styles: Record<string, React.CSSProperties> = {
   },
 
   badge: {
-    color: "#fbbf24",
+    color: "var(--role-accent-text, #fbbf24)",
     fontWeight: 700,
     letterSpacing: "0.12em",
     textTransform: "uppercase",
@@ -33,13 +33,14 @@ export const styles: Record<string, React.CSSProperties> = {
   },
 
   brandTitle: {
-    maxWidth: 760,
+    maxWidth: 820,
     margin: "0 0 18px",
     color: "#f8fafc",
-    fontSize: "clamp(38px, 7vw, 76px)",
+    fontSize: "clamp(42px, 7vw, 82px)",
     lineHeight: 0.95,
     fontWeight: 950,
     letterSpacing: 0,
+    textShadow: "0 2px 0 rgba(14,165,233,0.36)",
   },
 
   lead: {
@@ -75,7 +76,8 @@ export const styles: Record<string, React.CSSProperties> = {
     overflow: "hidden",
     border: "1px solid rgba(244,244,245,0.14)",
     borderTop: "3px solid #f59e0b",
-    background: "rgba(24,24,27,0.78)",
+    background:
+      "linear-gradient(135deg, rgba(244,244,245,0.07), rgba(24,24,27,0.84) 46%), rgba(24,24,27,0.78)",
     color: "#fff",
     padding: 24,
     borderRadius: 8,
@@ -101,6 +103,15 @@ export const styles: Record<string, React.CSSProperties> = {
     marginBottom: 8,
   },
 
+  roleMeta: {
+    display: "block",
+    color: "#a1a1aa",
+    fontSize: 11,
+    fontWeight: 900,
+    letterSpacing: "0.12em",
+    marginBottom: 8,
+  },
+
   roleAccent: {
     display: "block",
     width: 34,
@@ -116,6 +127,15 @@ export const styles: Record<string, React.CSSProperties> = {
     lineHeight: 1.6,
   },
 
+  roleCta: {
+    display: "inline-flex",
+    marginTop: 22,
+    color: "#f8fafc",
+    fontSize: 12,
+    fontWeight: 950,
+    letterSpacing: "0.16em",
+  },
+
   headerRow: {
     display: "flex",
     justifyContent: "space-between",
@@ -124,7 +144,8 @@ export const styles: Record<string, React.CSSProperties> = {
   },
 
   progressBox: {
-    background: "rgba(24,24,27,0.76)",
+    background:
+      "linear-gradient(135deg, rgba(244,244,245,0.06), rgba(24,24,27,0.78)), rgba(24,24,27,0.76)",
     border: "1px solid rgba(244,244,245,0.14)",
     padding: 16,
     borderRadius: 8,
@@ -150,7 +171,8 @@ export const styles: Record<string, React.CSSProperties> = {
   progressFill: {
     height: "100%",
     borderRadius: 999,
-    background: "linear-gradient(90deg, #f59e0b, #38bdf8)",
+    background:
+      "linear-gradient(90deg, var(--role-accent, #f59e0b), var(--role-accent-soft, #38bdf8))",
     transition: "width 180ms ease",
   },
 
@@ -161,10 +183,12 @@ export const styles: Record<string, React.CSSProperties> = {
   },
 
   questionCard: {
-    background: "rgba(24,24,27,0.78)",
+    background:
+      "linear-gradient(135deg, var(--role-accent-glow, rgba(245,158,11,0.10)), rgba(24,24,27,0.78) 24%), rgba(24,24,27,0.78)",
     border: "1px solid rgba(244,244,245,0.12)",
     borderRadius: 8,
     padding: 20,
+    boxShadow: "inset 3px 0 0 var(--role-accent, #f59e0b)",
   },
 
   questionHeader: {
@@ -179,9 +203,9 @@ export const styles: Record<string, React.CSSProperties> = {
     minWidth: 44,
     padding: "7px 9px",
     borderRadius: 8,
-    background: "rgba(251,191,36,0.14)",
-    border: "1px solid rgba(251,191,36,0.24)",
-    color: "#fbbf24",
+    background: "var(--role-accent-glow, rgba(251,191,36,0.14))",
+    border: "1px solid var(--role-accent, #f59e0b)",
+    color: "var(--role-accent-text, #fbbf24)",
     fontSize: 13,
     fontWeight: 900,
     textAlign: "center",
@@ -197,7 +221,7 @@ export const styles: Record<string, React.CSSProperties> = {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    gap: 14,
+    gap: 18,
   },
 
   scaleLabel: {
@@ -217,11 +241,14 @@ export const styles: Record<string, React.CSSProperties> = {
   },
 
   scaleButtons: {
-    display: "flex",
+    display: "grid",
+    gridTemplateColumns: "repeat(4, minmax(42px, 1fr))",
     alignItems: "center",
-    justifyContent: "center",
-    gap: 14,
+    justifyItems: "center",
+    gap: 18,
     flex: "1 1 auto",
+    maxWidth: 440,
+    margin: "0 auto",
   },
 
   answerButton: {
@@ -255,7 +282,8 @@ export const styles: Record<string, React.CSSProperties> = {
     justifyContent: "space-between",
     alignItems: "center",
     gap: 16,
-    background: "rgba(24,24,27,0.94)",
+    background:
+      "linear-gradient(135deg, rgba(244,244,245,0.05), rgba(24,24,27,0.94)), rgba(24,24,27,0.94)",
     border: "1px solid rgba(244,244,245,0.16)",
     borderRadius: 8,
     padding: 16,
@@ -264,13 +292,15 @@ export const styles: Record<string, React.CSSProperties> = {
   },
 
   resultButton: {
-    background: "#f59e0b",
+    background:
+      "linear-gradient(135deg, var(--role-accent, #f59e0b), var(--role-accent-soft, #38bdf8))",
     color: "#fff",
     border: "none",
     borderRadius: 8,
     padding: "12px 20px",
     fontWeight: 800,
     cursor: "pointer",
+    boxShadow: "0 10px 24px var(--role-accent-glow, rgba(245,158,11,0.24))",
   },
 
   resultButtonDisabled: {
@@ -298,33 +328,34 @@ export const styles: Record<string, React.CSSProperties> = {
     gridTemplateColumns: "64px 1fr",
     gap: 16,
     alignItems: "start",
-    background: "rgba(24,24,27,0.78)",
+    background:
+      "linear-gradient(135deg, rgba(244,244,245,0.05), rgba(24,24,27,0.80)), rgba(24,24,27,0.78)",
     border: "1px solid rgba(244,244,245,0.14)",
     borderRadius: 8,
     padding: 20,
   },
 
   resultCardTop: {
-    borderColor: "rgba(251,191,36,0.44)",
+    borderColor: "var(--role-accent, #f59e0b)",
     background:
-      "linear-gradient(135deg, rgba(251,191,36,0.14), rgba(24,24,27,0.78) 42%)",
+      "linear-gradient(135deg, var(--role-accent-glow, rgba(251,191,36,0.14)), rgba(24,24,27,0.78) 42%)",
   },
 
   rank: {
     width: 56,
     height: 56,
     borderRadius: 8,
-    background: "rgba(56,189,248,0.14)",
+    background: "var(--role-accent-glow, rgba(56,189,248,0.14))",
     display: "grid",
     placeItems: "center",
     fontWeight: 900,
     fontSize: 20,
-    color: "#7dd3fc",
+    color: "var(--role-accent-text, #7dd3fc)",
   },
 
   rankTop: {
-    background: "rgba(245,158,11,0.20)",
-    color: "#fbbf24",
+    background: "var(--role-accent-glow, rgba(245,158,11,0.20))",
+    color: "var(--role-accent-text, #fbbf24)",
   },
 
   heroName: {
@@ -334,8 +365,21 @@ export const styles: Record<string, React.CSSProperties> = {
 
   heroTitle: {
     margin: "0 0 8px",
-    color: "#7dd3fc",
+    color: "var(--role-accent-text, #7dd3fc)",
     fontWeight: 800,
+  },
+
+  scoreBadge: {
+    display: "inline-flex",
+    margin: "0 0 12px",
+    padding: "5px 9px",
+    borderRadius: 6,
+    background: "var(--role-accent-glow, rgba(245,158,11,0.14))",
+    color: "var(--role-accent-text, #fbbf24)",
+    border: "1px solid var(--role-accent, #f59e0b)",
+    fontSize: 12,
+    fontWeight: 950,
+    letterSpacing: "0.08em",
   },
 
   description: {
@@ -374,7 +418,8 @@ export const styles: Record<string, React.CSSProperties> = {
   },
 
   primaryButton: {
-    background: "#f59e0b",
+    background:
+      "linear-gradient(135deg, var(--role-accent, #f59e0b), var(--role-accent-soft, #38bdf8))",
     color: "#fff",
     border: "none",
     borderRadius: 8,

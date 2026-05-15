@@ -83,11 +83,11 @@ export function QuestionPage({
               <h2 style={styles.questionTitle}>{question.text}</h2>
             </div>
 
-            <div style={styles.answerScale}>
+            <div className="answer-scale" style={styles.answerScale}>
               <span style={{ ...styles.scaleLabel, ...styles.scaleLabelPositive }}>
                 そう思う
               </span>
-              <div style={styles.scaleButtons}>
+              <div className="scale-buttons" style={styles.scaleButtons}>
                 {answerOptions.map((option) => {
                   const selected = answers[question.id] === option.key;
                   const isPositive = option.tone === "positive";

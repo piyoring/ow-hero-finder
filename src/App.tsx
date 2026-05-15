@@ -1,8 +1,9 @@
+import type React from "react";
 import { useEffect, useMemo, useState } from "react";
 import type { AnswerKey, Page, Role } from "./types";
 import { damageGenreQuestions, damageHeroQuestions } from "./data/damageQuestions";
 import type { DamageGenre } from "./data/damageQuestions";
-import { roleConfigs } from "./data/roleConfigs";
+import { defaultRoleTheme, roleConfigs } from "./data/roleConfigs";
 import { calculateScores } from "./utils/calculateScores";
 import {
   getDamageHeroQuestions,
@@ -25,6 +26,14 @@ export default function App() {
   const [selectedDamageGenres, setSelectedDamageGenres] = useState<DamageGenre[]>([]);
 
   const roleConfig = selectedRole ? roleConfigs[selectedRole] : null;
+  const roleTheme = roleConfig?.theme ?? defaultRoleTheme;
+  const pageStyle = {
+    ...styles.page,
+    "--role-accent": roleTheme.accent,
+    "--role-accent-soft": roleTheme.accentSoft,
+    "--role-accent-glow": roleTheme.accentGlow,
+    "--role-accent-text": roleTheme.accentText,
+  } as React.CSSProperties;
   const damageGenreDiagnosisQuestions = useMemo(
     () => normalizeQuestions(damageGenreQuestions),
     []
@@ -116,7 +125,7 @@ export default function App() {
   };
 
   return (
-    <main style={styles.page}>
+    <main style={pageStyle}>
       <div style={styles.container}>
         {page === "top" && <TopPage onStart={startDiagnosis} />}
 

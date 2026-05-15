@@ -22,7 +22,7 @@ select {
 }
 
 button:focus-visible {
-  outline: 2px solid #fbbf24;
+  outline: 2px solid var(--role-accent-text, #fbbf24);
   outline-offset: 3px;
 }
 
@@ -33,5 +33,19 @@ button:focus-visible {
 @media (max-width: 760px) {
   .top-layout {
     grid-template-columns: 1fr !important;
+  }
+
+  .answer-scale {
+    align-items: stretch !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  .answer-scale .scale-buttons {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    max-width: none !important;
+    width: 100%;
   }
 }

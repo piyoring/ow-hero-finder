@@ -17,6 +17,9 @@ export function ResultPage({ results, heroDescriptions, onReset }: Props) {
     <>
       <p style={styles.badge}>Result</p>
       <h1 style={styles.title}>診断結果</h1>
+      <p style={styles.pageDescription}>
+        回答傾向から相性の高いヒーローを上位順に表示しています。
+      </p>
 
       <div style={styles.resultList}>
         {results.slice(0, 3).map((result, index) => {
@@ -37,6 +40,7 @@ export function ResultPage({ results, heroDescriptions, onReset }: Props) {
               <div>
                 <h2 style={styles.heroName}>{result.hero}</h2>
                 <p style={styles.heroTitle}>{info?.title}</p>
+                <p style={styles.scoreBadge}>MATCH SCORE {result.score}</p>
                 <p style={styles.description}>{info?.summary}</p>
                 {info?.recommendedFor?.length ? (
                   <div style={styles.recommendedBlock}>
@@ -50,7 +54,6 @@ export function ResultPage({ results, heroDescriptions, onReset }: Props) {
                     </ul>
                   </div>
                 ) : null}
-                <p style={styles.score}>スコア：{result.score}</p>
               </div>
             </section>
           );

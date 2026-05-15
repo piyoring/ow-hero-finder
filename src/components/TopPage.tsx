@@ -10,24 +10,28 @@ const roles: {
   title: string;
   text: string;
   accent: string;
+  meta: string;
 }[] = [
   {
     role: "tank",
     title: "タンク",
     text: "前線の作り方と守り方から診断",
     accent: "#f59e0b",
+    meta: "ROLE 01",
   },
   {
     role: "damage",
     title: "ダメージ",
     text: "まずプレイスタイルを絞って診断",
     accent: "#38bdf8",
+    meta: "ROLE 02",
   },
   {
     role: "support",
     title: "サポート",
     text: "支援・火力・判断の好みから診断",
     accent: "#34d399",
+    meta: "ROLE 03",
   },
 ];
 
@@ -52,8 +56,10 @@ export function TopPage({ onStart }: Props) {
             onClick={() => onStart(item.role)}
           >
             <span style={{ ...styles.roleAccent, background: item.accent }} />
+            <span style={styles.roleMeta}>{item.meta}</span>
             <span style={styles.roleTitle}>{item.title}</span>
             <span style={styles.roleText}>{item.text}</span>
+            <span style={styles.roleCta}>START</span>
           </button>
         ))}
       </div>

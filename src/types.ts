@@ -1,5 +1,5 @@
 export type Role = "tank" | "damage" | "support";
-export type Page = "top" | "questions" | "result";
+export type Page = "top" | "questions" | "result" | "damage-genre";
 export type AnswerKey = "yes" | "somewhat_yes" | "somewhat_no" | "no";
 
 export type ScoringRule = {
@@ -8,12 +8,14 @@ export type ScoringRule = {
 };
 
 export type Question = {
-  id: number;
+  id: string | number;
   text: string;
   scoring: Record<AnswerKey, ScoringRule>;
 };
 
 export type HeroDescription = {
   title: string;
-  description: string;
+  summary: string;
+  playstyle: string;
+  recommendedFor: string[];
 };

@@ -1,5 +1,21 @@
 import type { Question } from "../types";
 
+export type TankHero =
+  | "D.Va"
+  | "Doomfist"
+  | "Hazard"
+  | "Junker Queen"
+  | "Mauga"
+  | "Orisa"
+  | "Ramattra"
+  | "Reinhardt"
+  | "Roadhog"
+  | "Sigma"
+  | "Winston"
+  | "Wrecking Ball"
+  | "Zarya"
+  | "Domina";
+
 export const tankQuestions: Question[] = [
   {
     id: 1,

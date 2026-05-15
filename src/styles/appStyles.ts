@@ -218,6 +218,30 @@ export const styles: Record<string, React.CSSProperties> = {
     lineHeight: 1.7,
   },
 
+  recommendedBlock: {
+    marginTop: 14,
+  },
+
+  recommendedTitle: {
+    margin: "0 0 8px",
+    color: "#e5e7eb",
+    fontSize: 14,
+    fontWeight: 800,
+  },
+
+  recommendedList: {
+    display: "grid",
+    gap: 6,
+    margin: 0,
+    paddingLeft: 20,
+    color: "#cbd5e1",
+    lineHeight: 1.6,
+  },
+
+  recommendedItem: {
+    paddingLeft: 2,
+  },
+
   score: {
     margin: "12px 0 0",
     fontWeight: 800,

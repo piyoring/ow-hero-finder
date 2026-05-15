@@ -11,10 +11,11 @@ const answerOptions: { key: AnswerKey; label: string }[] = [
 type Props = {
   roleLabel: string;
   questions: Question[];
-  answers: Record<number, AnswerKey>;
-  onAnswer: (questionId: number, answer: AnswerKey) => void;
+  answers: Record<string, AnswerKey>;
+  onAnswer: (questionId: string | number, answer: AnswerKey) => void;
   onBackToTop: () => void;
-  onShowResult: () => void;
+  onComplete: () => void;
+  completeButtonLabel: string;
 };
 
 export function QuestionPage({
@@ -23,7 +24,8 @@ export function QuestionPage({
   answers,
   onAnswer,
   onBackToTop,
-  onShowResult,
+  onComplete,
+  completeButtonLabel,
 }: Props) {
   const answeredCount = Object.keys(answers).length;
   const isComplete = answeredCount === questions.length;
@@ -45,10 +47,10 @@ export function QuestionPage({
       </div>
 
       <div style={styles.questionList}>
-        {questions.map((question) => (
+        {questions.map((question, index) => (
           <section key={question.id} style={styles.questionCard}>
             <h2 style={styles.questionTitle}>
-              Q{question.id}. {question.text}
+              Q{index + 1}. {question.text}
             </h2>
 
             <div style={styles.answerGrid}>
@@ -85,9 +87,9 @@ export function QuestionPage({
             ...(isComplete ? {} : styles.resultButtonDisabled),
           }}
           disabled={!isComplete}
-          onClick={onShowResult}
+          onClick={onComplete}
         >
-          結果を見る
+          {completeButtonLabel}
         </button>
       </div>
     </>

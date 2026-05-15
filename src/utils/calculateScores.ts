@@ -2,7 +2,7 @@ import type { AnswerKey, Question } from "../types";
 
 export function calculateScores(
   questions: Question[],
-  answers: Record<number, AnswerKey>
+  answers: Record<string, AnswerKey>
 ) {
   const scores: Record<string, number> = {};
 

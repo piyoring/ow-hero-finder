@@ -8,7 +8,7 @@ type Result = {
 
 type Props = {
   results: Result[];
-  heroDescriptions: Record<string, HeroDescription>;
+  heroDescriptions: Partial<Record<string, HeroDescription>>;
   onReset: () => void;
 };
 
@@ -28,7 +28,19 @@ export function ResultPage({ results, heroDescriptions, onReset }: Props) {
               <div>
                 <h2 style={styles.heroName}>{result.hero}</h2>
                 <p style={styles.heroTitle}>{info?.title}</p>
-                <p style={styles.description}>{info?.description}</p>
+                <p style={styles.description}>{info?.summary}</p>
+                {info?.recommendedFor?.length ? (
+                  <div style={styles.recommendedBlock}>
+                    <p style={styles.recommendedTitle}>おすすめな人</p>
+                    <ul style={styles.recommendedList}>
+                      {info.recommendedFor.map((item) => (
+                        <li key={item} style={styles.recommendedItem}>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
                 <p style={styles.score}>スコア：{result.score}</p>
               </div>
             </section>

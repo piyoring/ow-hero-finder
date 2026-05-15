@@ -1,5 +1,21 @@
 import type { Question } from "../types";
 
+export type SupportHero =
+  | "Ana"
+  | "Baptiste"
+  | "Brigitte"
+  | "Illari"
+  | "Juno"
+  | "Kiriko"
+  | "Lifeweaver"
+  | "Lucio"
+  | "Mercy"
+  | "Moira"
+  | "Zenyatta"
+  | "Mizuki"
+  | "Wuyang"
+  | "Jetpack Cat";
+
 export const supportQuestions: Question[] = [
   {
     id: 1,

@@ -20,9 +20,9 @@ export function TopPage({ onStart }: Props) {
           <span style={styles.roleText}>20問で診断する</span>
         </button>
 
-        <button style={styles.disabledCard} disabled>
+        <button style={styles.primaryCard} onClick={() => onStart("damage")}>
           <span style={styles.roleTitle}>ダメージ</span>
-          <span style={styles.roleText}>準備中</span>
+          <span style={styles.roleText}>30問で診断する</span>
         </button>
 
         <button style={styles.primaryCard} onClick={() => onStart("support")}>

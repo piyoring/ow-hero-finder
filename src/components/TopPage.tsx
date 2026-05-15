@@ -39,7 +39,11 @@ export function TopPage({ onStart }: Props) {
   return (
     <section className="top-layout" style={styles.topLayout}>
       <div>
-        <h1 style={styles.brandTitle}>OVERWATCH FIND YOUR HERO</h1>
+        <h1 style={styles.brandTitle}>
+          OVERWATCH
+          <br />
+          FIND YOUR HERO
+        </h1>
         <p style={styles.lead}>
           立ち回り、戦い方、得意な距離感から、今のあなたに合うヒーロー候補を見つけます。
         </p>

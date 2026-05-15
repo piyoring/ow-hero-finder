@@ -7,17 +7,17 @@ import { tankQuestions } from "./tankQuestions";
 
 export const roleConfigs = {
   tank: {
-    label: "タンク",
+    label: "TANK",
     questions: tankQuestions,
     descriptions: tankDescriptions,
   },
   damage: {
-    label: "ダメージ",
+    label: "DAMAGE",
     questions: [],
     descriptions: damageDescriptions,
   },
   support: {
-    label: "サポート",
+    label: "SUPPORT",
     questions: supportQuestions,
     descriptions: supportDescriptions,
   },

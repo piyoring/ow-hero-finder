@@ -1,15 +1,31 @@
 import type { AnswerKey, Question } from "../types";
 import { styles } from "../styles/appStyles";
 
-const answerOptions: { key: AnswerKey; label: string }[] = [
-  { key: "yes", label: "はい" },
-  { key: "somewhat_yes", label: "どちらかといえばはい" },
-  { key: "somewhat_no", label: "どちらかといえばいいえ" },
-  { key: "no", label: "いいえ" },
+const answerOptions: {
+  key: AnswerKey;
+  title: string;
+  strength: "strong" | "soft";
+  tone: "negative" | "positive";
+}[] = [
+  { key: "yes", title: "はい", strength: "strong", tone: "positive" },
+  {
+    key: "somewhat_yes",
+    title: "どちらかといえばはい",
+    strength: "soft",
+    tone: "positive",
+  },
+  {
+    key: "somewhat_no",
+    title: "どちらかといえばいいえ",
+    strength: "soft",
+    tone: "negative",
+  },
+  { key: "no", title: "いいえ", strength: "strong", tone: "negative" },
 ];
 
 type Props = {
   roleLabel: string;
+  pageDescription?: string;
   questions: Question[];
   answers: Record<string, AnswerKey>;
   onAnswer: (questionId: string | number, answer: AnswerKey) => void;
@@ -20,6 +36,7 @@ type Props = {
 
 export function QuestionPage({
   roleLabel,
+  pageDescription,
   questions,
   answers,
   onAnswer,
@@ -29,13 +46,17 @@ export function QuestionPage({
 }: Props) {
   const answeredCount = Object.keys(answers).length;
   const isComplete = answeredCount === questions.length;
+  const progress =
+    questions.length === 0 ? 0 : (answeredCount / questions.length) * 100;
 
   return (
     <>
       <div style={styles.headerRow}>
         <div>
-          <p style={styles.badge}>{roleLabel}</p>
-          <h1 style={styles.title}>適性診断</h1>
+          <h1 style={styles.title}>{roleLabel}</h1>
+          {pageDescription ? (
+            <p style={styles.pageDescription}>{pageDescription}</p>
+          ) : null}
         </div>
         <button style={styles.secondaryButton} onClick={onBackToTop}>
           トップへ
@@ -43,33 +64,62 @@ export function QuestionPage({
       </div>
 
       <div style={styles.progressBox}>
-        回答済み：{answeredCount} / {questions.length}
+        <div style={styles.progressMeta}>
+          <span>回答済み</span>
+          <strong>
+            {answeredCount} / {questions.length}
+          </strong>
+        </div>
+        <div style={styles.progressTrack}>
+          <div style={{ ...styles.progressFill, width: `${progress}%` }} />
+        </div>
       </div>
 
       <div style={styles.questionList}>
         {questions.map((question, index) => (
           <section key={question.id} style={styles.questionCard}>
-            <h2 style={styles.questionTitle}>
-              Q{index + 1}. {question.text}
-            </h2>
+            <div style={styles.questionHeader}>
+              <span style={styles.questionNumber}>Q{index + 1}</span>
+              <h2 style={styles.questionTitle}>{question.text}</h2>
+            </div>
 
-            <div style={styles.answerGrid}>
-              {answerOptions.map((option) => {
-                const selected = answers[question.id] === option.key;
+            <div style={styles.answerScale}>
+              <span style={{ ...styles.scaleLabel, ...styles.scaleLabelPositive }}>
+                そう思う
+              </span>
+              <div style={styles.scaleButtons}>
+                {answerOptions.map((option) => {
+                  const selected = answers[question.id] === option.key;
+                  const isPositive = option.tone === "positive";
 
-                return (
-                  <button
-                    key={option.key}
-                    style={{
-                      ...styles.answerButton,
-                      ...(selected ? styles.answerButtonSelected : {}),
-                    }}
-                    onClick={() => onAnswer(question.id, option.key)}
-                  >
-                    {option.label}
-                  </button>
-                );
-              })}
+                  return (
+                    <button
+                      key={option.key}
+                      style={{
+                        ...styles.answerButton,
+                        ...(option.strength === "strong"
+                          ? styles.answerButtonStrong
+                          : {}),
+                        borderColor: isPositive
+                          ? "rgba(52,211,153,0.62)"
+                          : "rgba(248,113,113,0.62)",
+                        ...(selected
+                          ? {
+                              ...styles.answerButtonSelected,
+                              background: isPositive ? "#10b981" : "#ef4444",
+                            }
+                          : {}),
+                      }}
+                      onClick={() => onAnswer(question.id, option.key)}
+                      title={option.title}
+                      aria-label={option.title}
+                    />
+                  );
+                })}
+              </div>
+              <span style={{ ...styles.scaleLabel, ...styles.scaleLabelNegative }}>
+                そう思わない
+              </span>
             </div>
           </section>
         ))}

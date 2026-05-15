@@ -21,10 +21,19 @@ export function ResultPage({ results, heroDescriptions, onReset }: Props) {
       <div style={styles.resultList}>
         {results.slice(0, 3).map((result, index) => {
           const info = heroDescriptions[result.hero];
+          const isTop = index === 0;
 
           return (
-            <section key={result.hero} style={styles.resultCard}>
-              <div style={styles.rank}>#{index + 1}</div>
+            <section
+              key={result.hero}
+              style={{
+                ...styles.resultCard,
+                ...(isTop ? styles.resultCardTop : {}),
+              }}
+            >
+              <div style={{ ...styles.rank, ...(isTop ? styles.rankTop : {}) }}>
+                #{index + 1}
+              </div>
               <div>
                 <h2 style={styles.heroName}>{result.hero}</h2>
                 <p style={styles.heroTitle}>{info?.title}</p>

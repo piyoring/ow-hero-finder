@@ -3,9 +3,10 @@ import type React from "react";
 export const styles: Record<string, React.CSSProperties> = {
   page: {
     minHeight: "100vh",
-    background: "linear-gradient(135deg, #101827 0%, #1f2937 55%, #111827 100%)",
-    color: "#f9fafb",
-    padding: "32px 16px",
+    background:
+      "radial-gradient(circle at 18% 0%, rgba(245,158,11,0.18), transparent 30%), linear-gradient(135deg, #171717 0%, #222222 52%, #0f1720 100%)",
+    color: "#f8fafc",
+    padding: "40px 16px",
     boxSizing: "border-box",
     fontFamily:
       "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
@@ -17,18 +18,28 @@ export const styles: Record<string, React.CSSProperties> = {
   },
 
   badge: {
-    color: "#93c5fd",
+    color: "#fbbf24",
     fontWeight: 700,
-    letterSpacing: "0.08em",
+    letterSpacing: "0.12em",
     textTransform: "uppercase",
     fontSize: 13,
     margin: "0 0 8px",
   },
 
   title: {
-    fontSize: "clamp(32px, 6vw, 56px)",
+    fontSize: "clamp(34px, 6vw, 58px)",
     lineHeight: 1.1,
     margin: "0 0 16px",
+  },
+
+  brandTitle: {
+    maxWidth: 760,
+    margin: "0 0 18px",
+    color: "#f8fafc",
+    fontSize: "clamp(38px, 7vw, 76px)",
+    lineHeight: 0.95,
+    fontWeight: 950,
+    letterSpacing: 0,
   },
 
   lead: {
@@ -38,21 +49,39 @@ export const styles: Record<string, React.CSSProperties> = {
     maxWidth: 680,
   },
 
+  pageDescription: {
+    maxWidth: 620,
+    margin: "-4px 0 0",
+    color: "#cbd5e1",
+    fontSize: 15,
+    lineHeight: 1.7,
+  },
+
+  topLayout: {
+    display: "grid",
+    gap: 28,
+    alignItems: "start",
+  },
+
   roleGrid: {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
     gap: 16,
-    marginTop: 32,
+    marginTop: 4,
   },
 
   primaryCard: {
-    border: "1px solid rgba(147,197,253,0.5)",
-    background: "rgba(59,130,246,0.18)",
+    position: "relative",
+    overflow: "hidden",
+    border: "1px solid rgba(244,244,245,0.14)",
+    borderTop: "3px solid #f59e0b",
+    background: "rgba(24,24,27,0.78)",
     color: "#fff",
     padding: 24,
-    borderRadius: 20,
+    borderRadius: 8,
     textAlign: "left",
     cursor: "pointer",
+    boxShadow: "0 16px 40px rgba(0,0,0,0.24)",
   },
 
   disabledCard: {
@@ -60,7 +89,7 @@ export const styles: Record<string, React.CSSProperties> = {
     background: "rgba(148,163,184,0.08)",
     color: "#94a3b8",
     padding: 24,
-    borderRadius: 20,
+    borderRadius: 8,
     textAlign: "left",
     cursor: "not-allowed",
   },
@@ -72,9 +101,19 @@ export const styles: Record<string, React.CSSProperties> = {
     marginBottom: 8,
   },
 
+  roleAccent: {
+    display: "block",
+    width: 34,
+    height: 4,
+    borderRadius: 999,
+    marginBottom: 18,
+  },
+
   roleText: {
     display: "block",
-    fontSize: 14,
+    color: "#d4d4d8",
+    fontSize: 15,
+    lineHeight: 1.6,
   },
 
   headerRow: {
@@ -85,12 +124,34 @@ export const styles: Record<string, React.CSSProperties> = {
   },
 
   progressBox: {
-    background: "rgba(15,23,42,0.7)",
-    border: "1px solid rgba(148,163,184,0.25)",
-    padding: "12px 16px",
-    borderRadius: 14,
+    background: "rgba(24,24,27,0.76)",
+    border: "1px solid rgba(244,244,245,0.14)",
+    padding: 16,
+    borderRadius: 8,
     margin: "16px 0 24px",
-    color: "#cbd5e1",
+    color: "#d4d4d8",
+  },
+
+  progressMeta: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: 16,
+    marginBottom: 10,
+  },
+
+  progressTrack: {
+    height: 8,
+    overflow: "hidden",
+    borderRadius: 999,
+    background: "rgba(244,244,245,0.12)",
+  },
+
+  progressFill: {
+    height: "100%",
+    borderRadius: 999,
+    background: "linear-gradient(90deg, #f59e0b, #38bdf8)",
+    transition: "width 180ms ease",
   },
 
   questionList: {
@@ -100,38 +161,91 @@ export const styles: Record<string, React.CSSProperties> = {
   },
 
   questionCard: {
-    background: "rgba(15,23,42,0.78)",
-    border: "1px solid rgba(148,163,184,0.24)",
-    borderRadius: 20,
+    background: "rgba(24,24,27,0.78)",
+    border: "1px solid rgba(244,244,245,0.12)",
+    borderRadius: 8,
     padding: 20,
   },
 
+  questionHeader: {
+    display: "grid",
+    gridTemplateColumns: "auto 1fr",
+    gap: 14,
+    alignItems: "start",
+    marginBottom: 16,
+  },
+
+  questionNumber: {
+    minWidth: 44,
+    padding: "7px 9px",
+    borderRadius: 8,
+    background: "rgba(251,191,36,0.14)",
+    border: "1px solid rgba(251,191,36,0.24)",
+    color: "#fbbf24",
+    fontSize: 13,
+    fontWeight: 900,
+    textAlign: "center",
+  },
+
   questionTitle: {
-    margin: "0 0 16px",
+    margin: 0,
     fontSize: 18,
     lineHeight: 1.6,
   },
 
-  answerGrid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-    gap: 10,
+  answerScale: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 14,
+  },
+
+  scaleLabel: {
+    minWidth: 94,
+    color: "#a1a1aa",
+    fontSize: 13,
+    fontWeight: 800,
+  },
+
+  scaleLabelPositive: {
+    color: "#86efac",
+  },
+
+  scaleLabelNegative: {
+    color: "#fca5a5",
+    textAlign: "right",
+  },
+
+  scaleButtons: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 14,
+    flex: "1 1 auto",
   },
 
   answerButton: {
-    border: "1px solid rgba(148,163,184,0.35)",
-    background: "rgba(30,41,59,0.8)",
-    color: "#e5e7eb",
-    borderRadius: 14,
-    padding: "12px 14px",
+    border: "3px solid rgba(244,244,245,0.28)",
+    background: "rgba(24,24,27,0.36)",
+    color: "transparent",
+    borderRadius: 999,
+    padding: 0,
     cursor: "pointer",
-    fontWeight: 700,
+    width: 34,
+    height: 34,
+    display: "grid",
+    placeItems: "center",
+  },
+
+  answerButtonStrong: {
+    width: 46,
+    height: 46,
   },
 
   answerButtonSelected: {
-    background: "rgba(59,130,246,0.85)",
-    borderColor: "#93c5fd",
+    borderColor: "rgba(255,255,255,0.92)",
     color: "#ffffff",
+    boxShadow: "0 0 0 4px rgba(255,255,255,0.08)",
   },
 
   stickyFooter: {
@@ -141,18 +255,19 @@ export const styles: Record<string, React.CSSProperties> = {
     justifyContent: "space-between",
     alignItems: "center",
     gap: 16,
-    background: "rgba(15,23,42,0.95)",
-    border: "1px solid rgba(148,163,184,0.3)",
-    borderRadius: 18,
+    background: "rgba(24,24,27,0.94)",
+    border: "1px solid rgba(244,244,245,0.16)",
+    borderRadius: 8,
     padding: 16,
     backdropFilter: "blur(12px)",
+    boxShadow: "0 14px 34px rgba(0,0,0,0.25)",
   },
 
   resultButton: {
-    background: "#3b82f6",
+    background: "#f59e0b",
     color: "#fff",
     border: "none",
-    borderRadius: 999,
+    borderRadius: 8,
     padding: "12px 20px",
     fontWeight: 800,
     cursor: "pointer",
@@ -165,9 +280,9 @@ export const styles: Record<string, React.CSSProperties> = {
 
   secondaryButton: {
     background: "transparent",
-    color: "#cbd5e1",
-    border: "1px solid rgba(148,163,184,0.4)",
-    borderRadius: 999,
+    color: "#e5e7eb",
+    border: "1px solid rgba(244,244,245,0.22)",
+    borderRadius: 8,
     padding: "10px 16px",
     cursor: "pointer",
   },
@@ -183,22 +298,33 @@ export const styles: Record<string, React.CSSProperties> = {
     gridTemplateColumns: "64px 1fr",
     gap: 16,
     alignItems: "start",
-    background: "rgba(15,23,42,0.78)",
-    border: "1px solid rgba(147,197,253,0.28)",
-    borderRadius: 22,
+    background: "rgba(24,24,27,0.78)",
+    border: "1px solid rgba(244,244,245,0.14)",
+    borderRadius: 8,
     padding: 20,
+  },
+
+  resultCardTop: {
+    borderColor: "rgba(251,191,36,0.44)",
+    background:
+      "linear-gradient(135deg, rgba(251,191,36,0.14), rgba(24,24,27,0.78) 42%)",
   },
 
   rank: {
     width: 56,
     height: 56,
-    borderRadius: 18,
-    background: "rgba(59,130,246,0.25)",
+    borderRadius: 8,
+    background: "rgba(56,189,248,0.14)",
     display: "grid",
     placeItems: "center",
     fontWeight: 900,
     fontSize: 20,
-    color: "#bfdbfe",
+    color: "#7dd3fc",
+  },
+
+  rankTop: {
+    background: "rgba(245,158,11,0.20)",
+    color: "#fbbf24",
   },
 
   heroName: {
@@ -208,7 +334,7 @@ export const styles: Record<string, React.CSSProperties> = {
 
   heroTitle: {
     margin: "0 0 8px",
-    color: "#93c5fd",
+    color: "#7dd3fc",
     fontWeight: 800,
   },
 
@@ -224,7 +350,7 @@ export const styles: Record<string, React.CSSProperties> = {
 
   recommendedTitle: {
     margin: "0 0 8px",
-    color: "#e5e7eb",
+    color: "#f5f5f5",
     fontSize: 14,
     fontWeight: 800,
   },
@@ -248,12 +374,21 @@ export const styles: Record<string, React.CSSProperties> = {
   },
 
   primaryButton: {
-    background: "#3b82f6",
+    background: "#f59e0b",
     color: "#fff",
     border: "none",
-    borderRadius: 999,
+    borderRadius: 8,
     padding: "14px 22px",
     fontWeight: 900,
     cursor: "pointer",
+  },
+
+  disclaimer: {
+    marginTop: 48,
+    paddingTop: 18,
+    borderTop: "1px solid rgba(244,244,245,0.12)",
+    color: "#a1a1aa",
+    fontSize: 12,
+    lineHeight: 1.7,
   },
 };

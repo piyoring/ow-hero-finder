@@ -53,6 +53,12 @@ export default function App() {
 
   const roleLabel = roleConfig?.label ?? "";
   const heroDescriptions = roleConfig?.descriptions ?? {};
+  const questionPageDescription =
+    selectedRole === "damage"
+      ? page === "damage-genre"
+        ? "まずプレイスタイルを診断し、その結果からヒーロー診断へ進みます。"
+        : "プレイスタイル診断で選ばれた傾向をもとに、ヒーロー候補を絞り込みます。"
+      : undefined;
 
   const results = useMemo(() => {
     const currentAnswers = page === "damage-genre" ? damageGenreAnswers : answers;
@@ -117,6 +123,7 @@ export default function App() {
         {(page === "damage-genre" || page === "questions") && (
           <QuestionPage
             roleLabel={roleLabel}
+            pageDescription={questionPageDescription}
             questions={questions}
             answers={page === "damage-genre" ? damageGenreAnswers : answers}
             onAnswer={answerQuestion}
@@ -135,6 +142,11 @@ export default function App() {
             onReset={resetDiagnosis}
           />
         )}
+
+        <footer style={styles.disclaimer}>
+          このツールは非公式です。Blizzard Entertainment, Inc. とは提携・承認・後援関係にありません。Overwatch
+          および関連する名称は Blizzard Entertainment, Inc. の商標または登録商標です。
+        </footer>
       </div>
     </main>
   );

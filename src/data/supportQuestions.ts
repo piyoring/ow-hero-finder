@@ -129,7 +129,7 @@ export const supportQuestions: Question[] = [
   },
   {
     id: 12,
-    text: "忙しくても、機動力やキャラコンで差が出るキャラが好き",
+    text: "操作が忙しくても、機動力やキャラコンで差が出るキャラが好き",
     scoring: {
       yes: { targets: ["Lucio", "Juno", "Kiriko", "Jetpack Cat"], points: 2 },
       somewhat_yes: { targets: ["Lucio", "Juno", "Kiriko", "Jetpack Cat"], points: 1 },
@@ -139,7 +139,7 @@ export const supportQuestions: Question[] = [
   },
   {
     id: 13,
-    text: "味方のミスを、自分のスキルで無理やり帳消しにするのが好き",
+    text: "味方のミスを自分のスキルで無理やり帳消しにするのが好き",
     scoring: {
       yes: { targets: ["Kiriko", "Baptiste", "Mercy", "Ana"], points: 2 },
       somewhat_yes: { targets: ["Kiriko", "Baptiste", "Mercy", "Ana"], points: 1 },
@@ -169,7 +169,7 @@ export const supportQuestions: Question[] = [
   },
   {
     id: 16,
-    text: "回復だけしているより、敵の位置やクールダウンも見て動きたい",
+    text: "回復だけしているより、敵の位置やスキルのクールタイムも見て動きたい",
     scoring: {
       yes: { targets: ["Ana", "Kiriko", "Zenyatta", "Baptiste"], points: 2 },
       somewhat_yes: { targets: ["Ana", "Kiriko", "Zenyatta", "Baptiste"], points: 1 },
@@ -179,7 +179,7 @@ export const supportQuestions: Question[] = [
   },
   {
     id: 17,
-    text: "空中・高所・縦の動きを使って、味方にも敵にも関わりたい",
+    text: "空中・高所など、縦の動きも使って自由自在に動き回るのが好き",
     scoring: {
       yes: { targets: ["Juno", "Illari", "Jetpack Cat", "Kiriko"], points: 2 },
       somewhat_yes: { targets: ["Juno", "Illari", "Jetpack Cat", "Kiriko"], points: 1 },

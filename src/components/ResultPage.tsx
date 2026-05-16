@@ -28,9 +28,9 @@ function buildShareUrl(
   const pageUrl = `${window.location.origin}${import.meta.env.BASE_URL}`;
   const heroName = displayName ?? result?.hero;
   const shareText = result
-    ? `OVERWATCH HERO FINDERで診断したら、相性の良いヒーローは「${heroName}」でした！
+    ? `OVERWATCH FIND YOUR HEROで診断したら、相性の良いヒーローは「${heroName}」でした！
     ${title ? ` ${heroName} - ${title}` : ""}`
-    : "OVERWATCH HERO FINDERで自分に合うヒーローを診断しました！";
+    : "OVERWATCH FIND YOUR HEROで自分に合うヒーローを診断しました！";
   const params = new URLSearchParams({
     text: shareText,
     url: pageUrl,

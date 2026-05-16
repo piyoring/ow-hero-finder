@@ -1,6 +1,7 @@
 import type { SupportHero } from "./supportQuestions";
 
 export type SupportDescription = {
+  nameJa: string;
   title: string;
   summary: string;
   playstyle: string;
@@ -9,9 +10,10 @@ export type SupportDescription = {
 
 export const supportDescriptions: Record<SupportHero, SupportDescription> = {
   "Ana": {
+    nameJa: "アナ",
     title: "精密な判断で試合を動かす後方司令塔",
     summary:
-      "Anaは、遠距離から味方を回復しつつ、スリープや阻害で試合の流れを変えられるサポートです。高いエイム精度と、重要なスキルを使うタイミングの判断が求められます。",
+      "アナは、遠距離から味方を回復しつつ、スリープや阻害で試合の流れを変えられるサポートです。高いエイム精度と、重要なスキルを使うタイミングの判断が求められます。",
     playstyle:
       "後方から戦況を見て、必要な味方を回復しながら敵のキープレイヤーを妨害するタイプです。冷静な判断力と正確な操作で大きな影響を出せます。",
     recommendedFor: [
@@ -22,9 +24,10 @@ export const supportDescriptions: Record<SupportHero, SupportDescription> = {
   },
 
   "Baptiste": {
+    nameJa: "バティスト",
     title: "火力と救助を両立する万能中距離サポート",
     summary:
-      "Baptisteは、回復・火力・味方救助を高い水準でこなせる万能型サポートです。正確な射撃と、イモータリティ・フィールドを使うタイミングの判断でチームを支えます。",
+      "バティストは、回復・火力・味方救助を高い水準でこなせる万能型サポートです。正確な射撃と、イモータリティ・フィールドを使うタイミングの判断でチームを支えます。",
     playstyle:
       "中距離で味方を回復しながら、自分でも火力を出して前線を支えるタイプです。ピンチの味方を救う判断と、攻撃に参加するバランスが重要です。",
     recommendedFor: [
@@ -35,9 +38,10 @@ export const supportDescriptions: Record<SupportHero, SupportDescription> = {
   },
 
   "Brigitte": {
+    nameJa: "ブリギッテ",
     title: "味方の近くで守りを固める前線護衛サポート",
     summary:
-      "Brigitteは、味方の近くで戦いながら、敵の接近やダイブからチームを守るサポートです。後方でじっと回復するより、味方と一緒に前線を支える動きに向いています。",
+      "ブリギッテは、味方の近くで戦いながら、敵の接近やダイブからチームを守るサポートです。後方でじっと回復するより、味方と一緒に前線を支える動きに向いています。",
     playstyle:
       "味方の近くで敵をけん制し、危険な相手を押し返しながらチームを守るタイプです。特に味方の後衛を守る動きや、集団戦での立ち位置が重要です。",
     recommendedFor: [
@@ -48,9 +52,10 @@ export const supportDescriptions: Record<SupportHero, SupportDescription> = {
   },
 
   "Illari": {
+    nameJa: "イラリー",
     title: "高火力と設置回復で戦う攻撃寄りサポート",
     summary:
-      "Illariは、高い射撃火力と設置型の回復を使って、攻撃と支援を両立するサポートです。回復だけでなく、自分でも積極的にダメージを出したい人に向いています。",
+      "イラリーは、高い射撃火力と設置型の回復を使って、攻撃と支援を両立するサポートです。回復だけでなく、自分でも積極的にダメージを出したい人に向いています。",
     playstyle:
       "強いポジションを取り、回復パイロンで味方を支えながら自分でも敵に圧をかけるタイプです。エイムと位置取りの両方が重要です。",
     recommendedFor: [
@@ -61,9 +66,10 @@ export const supportDescriptions: Record<SupportHero, SupportDescription> = {
   },
 
   "Juno": {
+    nameJa: "ジュノ",
     title: "機動力と範囲支援で味方を動かす支援型サポート",
     summary:
-      "Junoは、機動力とチーム全体への支援で味方の動きを助けるサポートです。単体をじっくり見るより、味方全体の動きや集団行動を支えるプレイに向いています。",
+      "ジュノは、機動力とチーム全体への支援で味方の動きを助けるサポートです。単体をじっくり見るより、味方全体の動きや集団行動を支えるプレイに向いています。",
     playstyle:
       "機動力を活かして味方を広く支え、必要な場面でチーム全体の動きを後押しするタイプです。味方の位置や戦闘の流れを見る力が重要です。",
     recommendedFor: [
@@ -74,9 +80,10 @@ export const supportDescriptions: Record<SupportHero, SupportDescription> = {
   },
 
   "Kiriko": {
+    nameJa: "キリコ",
     title: "瞬間救助と機動力で流れを変える高対応サポート",
     summary:
-      "Kirikoは、味方のもとへ素早く移動し、ピンチを救ったり、チャンスを作ったりできるサポートです。鈴やテレポートを使う判断が試合に大きく影響します。",
+      "キリコは、味方のもとへ素早く移動し、ピンチを救ったり、チャンスを作ったりできるサポートです。鈴やテレポートを使う判断が試合に大きく影響します。",
     playstyle:
       "危険な味方にすぐ駆けつけ、重要なタイミングでスキルを使って流れを変えるタイプです。攻守の判断と、機動力を活かした立ち回りが強みです。",
     recommendedFor: [
@@ -87,9 +94,10 @@ export const supportDescriptions: Record<SupportHero, SupportDescription> = {
   },
 
   "Lifeweaver": {
+    nameJa: "ライフウィーバー",
     title: "味方の位置と生存を管理する救助型サポート",
     summary:
-      "Lifeweaverは、味方を引き寄せたり、高所を作ったりして、位置取りや立て直しを助けるサポートです。火力で押すよりも、味方を守りながら戦況を整える動きに向いています。",
+      "ライフウィーバーは、味方を引き寄せたり、高所を作ったりして、位置取りや立て直しを助けるサポートです。火力で押すよりも、味方を守りながら戦況を整える動きに向いています。",
     playstyle:
       "危険な味方を救い、チームが戦いやすい位置を作るタイプです。直接前に出るより、安全な位置から味方の動きやピンチを管理する意識が重要です。",
     recommendedFor: [
@@ -100,9 +108,10 @@ export const supportDescriptions: Record<SupportHero, SupportDescription> = {
   },
 
   "Lucio": {
+    nameJa: "ルシオ",
     title: "スピードと機動力で集団戦を動かすテンポ型サポート",
     summary:
-      "Lucioは、スピードブーストと高い機動力で、味方の攻めや退きを助けるサポートです。回復量だけでなく、チーム全体のテンポを作るプレイに向いています。",
+      "ルシオは、スピードブーストと高い機動力で、味方の攻めや退きを助けるサポートです。回復量だけでなく、チーム全体のテンポを作るプレイに向いています。",
     playstyle:
       "味方の集団行動に合わせてスピードを出し、攻めるタイミングや引くタイミングを作るタイプです。壁走りや立ち位置で生存しながら、戦闘のリズムを作ります。",
     recommendedFor: [
@@ -113,9 +122,10 @@ export const supportDescriptions: Record<SupportHero, SupportDescription> = {
   },
 
   "Mercy": {
+    nameJa: "マーシー",
     title: "味方の強みを引き出す単体支援サポート",
     summary:
-      "Mercyは、味方に寄り添いながら回復やダメージブーストで活躍を支えるサポートです。自分で倒すよりも、味方の強い動きをさらに伸ばすプレイに向いています。",
+      "マーシーは、味方に寄り添いながら回復やダメージブーストで活躍を支えるサポートです。自分で倒すよりも、味方の強い動きをさらに伸ばすプレイに向いています。",
     playstyle:
       "味方の位置に合わせて動き、重要な味方を支援し続けるタイプです。安全な立ち位置と、誰を支援するかの判断が大切です。",
     recommendedFor: [
@@ -126,9 +136,10 @@ export const supportDescriptions: Record<SupportHero, SupportDescription> = {
   },
 
   "Moira": {
+    nameJa: "モイラ",
     title: "直感的な操作で回復と攻撃を回す継戦型サポート",
     summary:
-      "Moiraは、範囲回復と自己生存力を活かして、乱戦の中でも安定して味方を支えられるサポートです。操作は比較的直感的ですが、リソース管理と攻守の切り替えが重要です。",
+      "モイラは、範囲回復と自己生存力を活かして、乱戦の中でも安定して味方を支えられるサポートです。操作は比較的直感的ですが、リソース管理と攻守の切り替えが重要です。",
     playstyle:
       "味方の近くで回復を回しつつ、必要な場面では自分でもダメージを出すタイプです。しぶとく生き残りながら、継続的にチームを支えます。",
     recommendedFor: [
@@ -139,9 +150,10 @@ export const supportDescriptions: Record<SupportHero, SupportDescription> = {
   },
 
   "Zenyatta": {
+    nameJa: "ゼニヤッタ",
     title: "火力と不和で敵を崩す後方火力サポート",
     summary:
-      "Zenyattaは、後方から高い火力と不和のオーブで敵に大きなプレッシャーをかけるサポートです。回復量で支えるよりも、敵を倒しやすくすることで試合に貢献します。",
+      "ゼニヤッタは、後方から高い火力と不和のオーブで敵に大きなプレッシャーをかけるサポートです。回復量で支えるよりも、敵を倒しやすくすることで試合に貢献します。",
     playstyle:
       "安全な位置から敵に圧をかけ、不和を使ってチームのフォーカスを助けるタイプです。位置取りと狙われない立ち回りが非常に重要です。",
     recommendedFor: [
@@ -152,9 +164,10 @@ export const supportDescriptions: Record<SupportHero, SupportDescription> = {
   },
 
   "Mizuki": {
+    nameJa: "ミズキ",
     title: "トリッキーな判断で流れを変える高難度サポート",
     summary:
-      "Mizukiは、独自のスキルや判断力で、相手の行動を乱したり味方を助けたりするテクニカルなサポートです。扱いは難しめですが、使いこなせると試合の流れを大きく変えられます。",
+      "ミズキは、独自のスキルや判断力で、相手の行動を乱したり味方を助けたりするテクニカルなサポートです。扱いは難しめですが、使いこなせると試合の流れを大きく変えられます。",
     playstyle:
       "相手の動きや状況を読んで、重要なタイミングでスキルを使うタイプです。単純な回復よりも、妨害やプレイメイクで価値を出します。",
     recommendedFor: [
@@ -165,9 +178,10 @@ export const supportDescriptions: Record<SupportHero, SupportDescription> = {
   },
 
   "Wuyang": {
+    nameJa: "ウーヤン",
     title: "集団支援と空間管理で味方を支える戦術型サポート",
     summary:
-      "Wuyangは、味方の集団行動やエリア管理を支えながら、チーム全体の戦いやすさを作るサポートです。単体を追いかけるより、全体の流れを見て支援するプレイに向いています。",
+      "ウーヤンは、味方の集団行動やエリア管理を支えながら、チーム全体の戦いやすさを作るサポートです。単体を追いかけるより、全体の流れを見て支援するプレイに向いています。",
     playstyle:
       "味方のまとまりや位置取りを意識し、集団戦で価値を出すタイプです。攻め急ぐより、チームが有利に動ける形を作ることが重要です。",
     recommendedFor: [
@@ -178,9 +192,10 @@ export const supportDescriptions: Record<SupportHero, SupportDescription> = {
   },
 
   "Jetpack Cat": {
+    nameJa: "ジェットパック・キャット",
     title: "空中機動で味方を支える特殊機動サポート",
     summary:
-      "Jetpack Catは、空中や高所を活かして戦場を動き回り、味方を支えるサポートです。通常の地上サポートとは違う角度からフォローできる、個性的な機動型キャラです。",
+      "ジェットパック・キャットは、空中や高所を活かして戦場を動き回り、味方を支えるサポートです。通常の地上サポートとは違う角度からフォローできる、個性的な機動型キャラです。",
     playstyle:
       "機動力を活かして味方を追い、必要な場所へ素早く移動するタイプです。高所や空中から状況を見て、味方のフォローや敵への圧をかけます。",
     recommendedFor: [

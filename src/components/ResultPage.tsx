@@ -12,11 +12,24 @@ type Props = {
   onReset: () => void;
 };
 
-function buildShareUrl(result: Result | undefined, title: string | undefined) {
+function formatHeroName(hero: string, info: HeroDescription | undefined) {
+  if (!info?.nameJa || info.nameJa === hero) {
+    return hero;
+  }
+
+  return `${info.nameJa} / ${hero}`;
+}
+
+function buildShareUrl(
+  result: Result | undefined,
+  title: string | undefined,
+  displayName: string | undefined,
+) {
   const pageUrl = `${window.location.origin}${import.meta.env.BASE_URL}`;
+  const heroName = displayName ?? result?.hero;
   const shareText = result
-    ? `OVERWATCH HERO FINDERで診断したら、相性の良いヒーローは「${result.hero}」でした！
-    ${title ? ` ${result.hero} - ${title}` : ""}`
+    ? `OVERWATCH HERO FINDERで診断したら、相性の良いヒーローは「${heroName}」でした！
+    ${title ? ` ${heroName} - ${title}` : ""}`
     : "OVERWATCH HERO FINDERで自分に合うヒーローを診断しました！";
   const params = new URLSearchParams({
     text: shareText,
@@ -28,10 +41,11 @@ function buildShareUrl(result: Result | undefined, title: string | undefined) {
 
 export function ResultPage({ results, heroDescriptions, onReset }: Props) {
   const topResult = results[0];
-  const shareUrl = buildShareUrl(
-    topResult,
-    topResult ? heroDescriptions[topResult.hero]?.title : undefined,
-  );
+  const topInfo = topResult ? heroDescriptions[topResult.hero] : undefined;
+  const topHeroName = topResult
+    ? formatHeroName(topResult.hero, topInfo)
+    : undefined;
+  const shareUrl = buildShareUrl(topResult, topInfo?.title, topHeroName);
 
   return (
     <>
@@ -45,6 +59,7 @@ export function ResultPage({ results, heroDescriptions, onReset }: Props) {
         {results.slice(0, 3).map((result, index) => {
           const info = heroDescriptions[result.hero];
           const isTop = index === 0;
+          const heroName = formatHeroName(result.hero, info);
 
           return (
             <section
@@ -58,7 +73,7 @@ export function ResultPage({ results, heroDescriptions, onReset }: Props) {
                 #{index + 1}
               </div>
               <div>
-                <h2 style={styles.heroName}>{result.hero}</h2>
+                <h2 style={styles.heroName}>{heroName}</h2>
                 <p style={styles.heroTitle}>{info?.title}</p>
                 <p style={styles.scoreBadge}>MATCH SCORE {result.score}</p>
                 <p style={styles.description}>{info?.summary}</p>

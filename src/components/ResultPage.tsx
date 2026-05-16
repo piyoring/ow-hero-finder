@@ -27,7 +27,7 @@ function buildShareUrl(
 ) {
   const pageUrl = `${window.location.origin}${import.meta.env.BASE_URL}`;
   const heroName = displayName ?? result?.hero;
-  const hashtags = "#Overwatch #オーバーウォッチ";
+  const hashtags = "#OWヒーロー診断 #Overwatch";
   const shareText = result
     ? [
         `OVERWATCH FIND YOUR HEROで診断したら、相性の良いヒーローは「${heroName}」でした！`,

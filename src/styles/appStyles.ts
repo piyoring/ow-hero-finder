@@ -417,6 +417,13 @@ export const styles: Record<string, React.CSSProperties> = {
     fontWeight: 800,
   },
 
+  resultActions: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: 12,
+    alignItems: "center",
+  },
+
   primaryButton: {
     background:
       "linear-gradient(135deg, var(--role-accent, #f59e0b), var(--role-accent-soft, #38bdf8))",
@@ -426,6 +433,15 @@ export const styles: Record<string, React.CSSProperties> = {
     padding: "14px 22px",
     fontWeight: 900,
     cursor: "pointer",
+  },
+
+  shareButton: {
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    background: "#f8fafc",
+    color: "#111827",
+    textDecoration: "none",
   },
 
   disclaimer: {

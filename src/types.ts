@@ -14,6 +14,7 @@ export type Question = {
 };
 
 export type HeroDescription = {
+  nameJa: string;
   title: string;
   summary: string;
   playstyle: string;

@@ -314,6 +314,8 @@ export const styles: Record<string, React.CSSProperties> = {
     border: "1px solid rgba(244,244,245,0.22)",
     borderRadius: 8,
     padding: "10px 16px",
+    flexShrink: 0,
+    whiteSpace: "nowrap",
     cursor: "pointer",
   },
 

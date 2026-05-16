@@ -197,7 +197,7 @@ export const damageHeroQuestions: DamageHeroQuestion[] = [
   {
     id: "F1",
     genre: "flanker",
-    text: "短時間だけ入り、相手を乱したらすぐ離脱する動きが好き",
+    text: "敵の不意を突いて攻撃し、相手を乱したらすぐ離脱する動きが好き",
     scoring: {
       yes: { targets: ["Tracer", "Venture"], points: 2 },
       somewhat_yes: { targets: ["Tracer", "Venture"], points: 1 },
@@ -208,7 +208,7 @@ export const damageHeroQuestions: DamageHeroQuestion[] = [
   {
     id: "F2",
     genre: "flanker",
-    text: "相手の油断した瞬間に入り、一気に倒し切りたい",
+    text: "相手の油断した瞬間に攻撃し、一気に倒し切りたい",
     scoring: {
       yes: { targets: ["Genji", "Venture"], points: 2 },
       somewhat_yes: { targets: ["Genji", "Venture"], points: 1 },
@@ -241,7 +241,7 @@ export const damageHeroQuestions: DamageHeroQuestion[] = [
   {
     id: "F5",
     genre: "flanker",
-    text: "逃げ道を考えながら、何度も相手の後衛に触りたい",
+    text: "逃げ道を考えながら、頻繁に相手の後衛に圧をかけたい",
     scoring: {
       yes: { targets: ["Tracer", "Genji"], points: 2 },
       somewhat_yes: { targets: ["Tracer", "Genji"], points: 1 },
@@ -252,7 +252,7 @@ export const damageHeroQuestions: DamageHeroQuestion[] = [
   {
     id: "F6",
     genre: "flanker",
-    text: "味方の仕掛けに合わせて、後衛へ一気に入りたい",
+    text: "味方の仕掛けに合わせて、敵の後衛へ一気に仕掛けたい",
     scoring: {
       yes: { targets: ["Genji", "Venture"], points: 2 },
       somewhat_yes: { targets: ["Genji", "Venture"], points: 1 },
@@ -265,7 +265,7 @@ export const damageHeroQuestions: DamageHeroQuestion[] = [
   {
     id: "M1",
     genre: "midrange",
-    text: "分かりやすい武器で、安定してダメージを出せると安心",
+    text: "操作が分かりやすい武器で、安定してダメージを出せると安心",
     scoring: {
       yes: { targets: ["Soldier: 76", "Emre"], points: 2 },
       somewhat_yes: { targets: ["Soldier: 76", "Emre"], points: 1 },
@@ -276,7 +276,7 @@ export const damageHeroQuestions: DamageHeroQuestion[] = [
   {
     id: "M2",
     genre: "midrange",
-    text: "フルオートより、1発ずつ丁寧に当てる武器が好き",
+    text: "フルオート武器より、1発ずつ丁寧に当てる武器が好き",
     scoring: {
       yes: { targets: ["Cassidy", "Emre"], points: 2 },
       somewhat_yes: { targets: ["Cassidy", "Emre"], points: 1 },
@@ -355,7 +355,7 @@ export const damageHeroQuestions: DamageHeroQuestion[] = [
   {
     id: "L3",
     genre: "longRange",
-    text: "相手の移動を読んで、偏差撃ちや先置きで当てたい",
+    text: "相手の移動先を読んで、偏差撃ちや先置きで当てたい",
     scoring: {
       yes: { targets: ["Hanzo", "Sierra"], points: 2 },
       somewhat_yes: { targets: ["Hanzo", "Sierra"], points: 1 },
@@ -366,7 +366,7 @@ export const damageHeroQuestions: DamageHeroQuestion[] = [
   {
     id: "L4",
     genre: "longRange",
-    text: "遠くから重要な敵を狙える位置を探すのが好き",
+    text: "遠くから重要な敵を狙える、安全な位置を探すのが好き",
     scoring: {
       yes: { targets: ["Widowmaker", "Sierra"], points: 2 },
       somewhat_yes: { targets: ["Widowmaker", "Sierra"], points: 1 },
@@ -377,7 +377,7 @@ export const damageHeroQuestions: DamageHeroQuestion[] = [
   {
     id: "L5",
     genre: "longRange",
-    text: "素早い乱戦より、落ち着いて狙うプレイが向いている",
+    text: "スピード感のある乱戦より、落ち着いて狙うプレイが向いている",
     scoring: {
       yes: { targets: ["Widowmaker", "Ashe"], points: 2 },
       somewhat_yes: { targets: ["Widowmaker", "Ashe"], points: 1 },
@@ -412,7 +412,7 @@ export const damageHeroQuestions: DamageHeroQuestion[] = [
   {
     id: "A2",
     genre: "areaDamage",
-    text: "地上の撃ち合いより、上から広い範囲に火力を出したい",
+    text: "地上の撃ち合いより、上空から広い範囲に火力を出したい",
     scoring: {
       yes: { targets: ["Pharah", "Echo"], points: 2 },
       somewhat_yes: { targets: ["Pharah", "Echo"], points: 1 },
@@ -423,7 +423,7 @@ export const damageHeroQuestions: DamageHeroQuestion[] = [
   {
     id: "A3",
     genre: "areaDamage",
-    text: "1人を抜くより、相手が通りにくい場所を作りたい",
+    text: "キルを狙うより、ダメージを出し続けて相手が通りにくい場所を作りたい",
     scoring: {
       yes: { targets: ["Junkrat", "Anran"], points: 2 },
       somewhat_yes: { targets: ["Junkrat", "Anran"], points: 1 },
@@ -513,7 +513,7 @@ export const damageHeroQuestions: DamageHeroQuestion[] = [
   {
     id: "D5",
     genre: "defense",
-    text: "タレットや設置物で、相手に動き方を考えさせたい",
+    text: "タレットや設置物で、相手に思うような動きをさせないのが好き",
     scoring: {
       yes: { targets: ["Symmetra", "Bastion"], points: 2 },
       somewhat_yes: { targets: ["Symmetra", "Bastion"], points: 1 },
@@ -537,7 +537,7 @@ export const damageHeroQuestions: DamageHeroQuestion[] = [
   {
     id: "T1",
     genre: "technical",
-    text: "相手の行動を読んで、嫌なタイミングで仕掛けたい",
+    text: "相手の行動を読んで、もっとも嫌がるタイミングで仕掛けるのが好き",
     scoring: {
       yes: { targets: ["Sombra"], points: 2 },
       somewhat_yes: { targets: ["Sombra"], points: 1 },
@@ -548,7 +548,7 @@ export const damageHeroQuestions: DamageHeroQuestion[] = [
   {
     id: "T2",
     genre: "technical",
-    text: "正面から素直に撃つより、相手の判断をずらす動きが好き",
+    text: "正面から素直に撃つより、相手の思考を邪魔する動きが好き",
     scoring: {
       yes: { targets: ["Sombra", "Vendetta"], points: 2 },
       somewhat_yes: { targets: ["Sombra", "Vendetta"], points: 1 },

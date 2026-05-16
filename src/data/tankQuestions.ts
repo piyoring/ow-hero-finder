@@ -19,7 +19,7 @@ export type TankHero =
 export const tankQuestions: Question[] = [
   {
     id: 1,
-    text: "チームが前に出るきっかけを、自分から作りたい",
+    text: "チームが前に出るきっかけを自分から作りたい",
     scoring: {
       yes: { targets: ["Reinhardt", "Junker Queen", "Winston", "Mauga"], points: 2 },
       somewhat_yes: { targets: ["Reinhardt", "Junker Queen", "Winston", "Mauga"], points: 1 },
@@ -29,7 +29,7 @@ export const tankQuestions: Question[] = [
   },
   {
     id: 2,
-    text: "正面で受けるより、敵の後衛や横の展開にプレッシャーをかけたい",
+    text: "正面で攻撃を受け止めるより、敵の後衛や横の展開にプレッシャーをかけたい",
     scoring: {
       yes: { targets: ["Doomfist", "Wrecking Ball", "Winston", "D.Va"], points: 2 },
       somewhat_yes: { targets: ["Doomfist", "Wrecking Ball", "Winston", "D.Va"], points: 1 },
@@ -39,7 +39,7 @@ export const tankQuestions: Question[] = [
   },
   {
     id: 3,
-    text: "キルを取るより、味方が動きやすい場所を作る方にやりがいを感じる",
+    text: "自分がキルを取るより、味方が動きやすい場所を作る方にやりがいを感じる",
     scoring: {
       yes: { targets: ["Reinhardt", "Sigma", "Orisa", "Domina", "Winston", "Zarya", "D.Va"], points: 2 },
       somewhat_yes: { targets: ["Reinhardt", "Sigma", "Orisa", "Domina", "Winston", "Zarya", "D.Va"], points: 1 },
@@ -49,7 +49,7 @@ export const tankQuestions: Question[] = [
   },
   {
     id: 4,
-    text: "敵が有利な場所にいると、そこから動かしたくなる",
+    text: "敵が有利な場所にいると、まずそこからどかしたくなる",
     scoring: {
       yes: { targets: ["D.Va", "Winston", "Hazard", "Wrecking Ball"], points: 2 },
       somewhat_yes: { targets: ["D.Va", "Winston", "Hazard", "Wrecking Ball"], points: 1 },
@@ -199,7 +199,7 @@ export const tankQuestions: Question[] = [
   },
   {
     id: 19,
-    text: "難しくても、キャラコンやクールダウン管理で差が出るタンクが好き",
+    text: "難しくても、キャラコンやスキルのクールタイム管理で差が出るタンクが好き",
     scoring: {
       yes: { targets: ["Doomfist", "Wrecking Ball", "D.Va", "Hazard", "Winston"], points: 2 },
       somewhat_yes: { targets: ["Doomfist", "Wrecking Ball", "D.Va", "Hazard", "Winston"], points: 1 },

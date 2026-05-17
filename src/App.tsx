@@ -6,7 +6,9 @@ import type { DamageGenre } from "./data/damageQuestions";
 import { defaultRoleTheme, roleConfigs } from "./data/roleConfigs";
 import { calculateScores } from "./utils/calculateScores";
 import {
+  applyDamageGenreLeaderBonus,
   getDamageHeroQuestions,
+  getLeadingDamageGenre,
   getTopDamageGenres,
   normalizeQuestions,
 } from "./utils/diagnosis";
@@ -44,6 +46,11 @@ export default function App() {
     [damageGenreAnswers, damageGenreDiagnosisQuestions]
   );
 
+  const leadingDamageGenre = useMemo(
+    () => getLeadingDamageGenre(damageGenreDiagnosisQuestions, damageGenreAnswers),
+    [damageGenreAnswers, damageGenreDiagnosisQuestions]
+  );
+
   const questions: Question[] = useMemo(() => {
     if (page === "damage-genre") return damageGenreDiagnosisQuestions;
 
@@ -71,8 +78,25 @@ export default function App() {
 
   const results = useMemo(() => {
     const currentAnswers = page === "damage-genre" ? damageGenreAnswers : answers;
-    return calculateScores(questions, currentAnswers);
-  }, [questions, answers, damageGenreAnswers, page]);
+    const baseResults = calculateScores(questions, currentAnswers);
+
+    if (selectedRole !== "damage" || page === "damage-genre") {
+      return baseResults;
+    }
+
+    return applyDamageGenreLeaderBonus(
+      baseResults,
+      damageHeroQuestions,
+      leadingDamageGenre
+    );
+  }, [
+    questions,
+    answers,
+    damageGenreAnswers,
+    leadingDamageGenre,
+    page,
+    selectedRole,
+  ]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });

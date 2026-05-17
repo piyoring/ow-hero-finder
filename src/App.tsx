@@ -68,6 +68,7 @@ export default function App() {
   ]);
 
   const roleLabel = roleConfig?.label ?? "";
+  const roleShareLabel = roleConfig?.shareLabel ?? "";
   const heroDescriptions = roleConfig?.descriptions ?? {};
   const questionPageDescription =
     selectedRole === "damage"
@@ -172,6 +173,7 @@ export default function App() {
           <ResultPage
             results={results}
             heroDescriptions={heroDescriptions}
+            roleShareLabel={roleShareLabel}
             onReset={resetDiagnosis}
           />
         )}

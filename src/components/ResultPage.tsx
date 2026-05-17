@@ -9,6 +9,7 @@ type Result = {
 type Props = {
   results: Result[];
   heroDescriptions: Partial<Record<string, HeroDescription>>;
+  roleShareLabel: string;
   onReset: () => void;
 };
 
@@ -24,11 +25,13 @@ function buildShareUrl(
   result: Result | undefined,
   title: string | undefined,
   displayName: string | undefined,
+  roleShareLabel: string,
 ) {
   const pageUrl = `${window.location.origin}${import.meta.env.BASE_URL}`;
   const heroName = displayName ?? result?.hero;
+  const roleText = roleShareLabel ? roleShareLabel : "ヒーロー";
   const shareText = result
-    ? `OVERWATCH FIND YOUR HEROで診断したら、相性の良いヒーローは「${heroName}」でした！
+    ? `OVERWATCH FIND YOUR HEROで診断したら、相性の良い${roleText}は「${heroName}」でした！
     ${title ? ` ${heroName} - ${title}` : ""}`
     : "OVERWATCH FIND YOUR HEROで自分に合うヒーローを診断しました！";
   const params = new URLSearchParams({
@@ -39,13 +42,23 @@ function buildShareUrl(
   return `https://twitter.com/intent/tweet?${params.toString()}`;
 }
 
-export function ResultPage({ results, heroDescriptions, onReset }: Props) {
+export function ResultPage({
+  results,
+  heroDescriptions,
+  roleShareLabel,
+  onReset,
+}: Props) {
   const topResult = results[0];
   const topInfo = topResult ? heroDescriptions[topResult.hero] : undefined;
   const topHeroName = topResult
     ? formatHeroName(topResult.hero, topInfo)
     : undefined;
-  const shareUrl = buildShareUrl(topResult, topInfo?.title, topHeroName);
+  const shareUrl = buildShareUrl(
+    topResult,
+    topInfo?.title,
+    topHeroName,
+    roleShareLabel
+  );
 
   return (
     <>

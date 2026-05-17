@@ -22,6 +22,7 @@ export const defaultRoleTheme: RoleTheme = {
 export const roleConfigs = {
   tank: {
     label: "TANK",
+    shareLabel: "タンクロール",
     theme: {
       accent: "#f59e0b",
       accentSoft: "#fbbf24",
@@ -33,6 +34,7 @@ export const roleConfigs = {
   },
   damage: {
     label: "DAMAGE",
+    shareLabel: "ダメージロール",
     theme: {
       accent: "#0ea5e9",
       accentSoft: "#38bdf8",
@@ -44,6 +46,7 @@ export const roleConfigs = {
   },
   support: {
     label: "SUPPORT",
+    shareLabel: "サポートロール",
     theme: {
       accent: "#10b981",
       accentSoft: "#34d399",
@@ -57,6 +60,7 @@ export const roleConfigs = {
   Role,
   {
     label: string;
+    shareLabel: string;
     theme: RoleTheme;
     questions: Question[];
     descriptions: Partial<Record<string, HeroDescription>>;

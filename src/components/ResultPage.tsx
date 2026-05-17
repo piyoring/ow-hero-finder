@@ -30,10 +30,21 @@ function buildShareUrl(
   const pageUrl = `${window.location.origin}${import.meta.env.BASE_URL}`;
   const heroName = displayName ?? result?.hero;
   const roleText = roleShareLabel ? roleShareLabel : "ヒーロー";
+  const hashtags = "#OWヒーロー診断 #Overwatch";
   const shareText = result
-    ? `OVERWATCH FIND YOUR HEROで診断したら、相性の良い${roleText}は「${heroName}」でした！
-    ${title ? ` ${heroName} - ${title}` : ""}`
-    : "OVERWATCH FIND YOUR HEROで自分に合うヒーローを診断しました！";
+    ? [
+        `OVERWATCH FIND YOUR HEROで診断したら、相性の良い${roleText}は「${heroName}」でした！`,
+        title ? `${heroName} - ${title}` : undefined,
+
+        hashtags,
+      ]
+        .filter(Boolean)
+        .join("\n")
+    : [
+        "OVERWATCH FIND YOUR HEROで自分に合うヒーローを診断しました！",
+
+        hashtags,
+      ].join("\n");
   const params = new URLSearchParams({
     text: shareText,
     url: pageUrl,
